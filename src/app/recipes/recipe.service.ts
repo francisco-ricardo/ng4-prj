@@ -1,14 +1,14 @@
 import {
+  EventEmitter,
+  Injectable
+} from '@angular/core';
+
+import {
   ShoppingListService
 } from './../shopping-list/shopping-list.service';
 import {
   Ingredient
 } from '../shared/ingredient.model';
-
-import {
-  EventEmitter,
-  Injectable
-} from '@angular/core';
 import {
   Recipe
 } from 'app/recipes/recipe.model';
@@ -38,6 +38,11 @@ export class RecipeService {
   getRecipes() {
     return this.recipes.slice();
   }
+
+  getRecipe(index: number) {
+    return this.recipes[index];
+  }
+
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
     this.slService.addIngredients(ingredients);
