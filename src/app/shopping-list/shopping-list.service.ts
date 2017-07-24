@@ -35,4 +35,9 @@ updateIngredient(index: number, newIngredient: Ingredient) {
   this.ingredientsChanged.next(this.ingredients.slice());
 }
 
+public deleteIngredient(index: number): void {
+  this.ingredients.splice(index, 1);
+  this.ingredientsChanged.next(this.ingredients.slice());
+}
+
 }
